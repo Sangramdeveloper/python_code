@@ -1,0 +1,326 @@
+keyboad input list data
+____________________
+L=[]
+print("enter how many element stote in list")
+s=int(input())
+for i in range(0,s,1):
+	print("enter element ",i+1)
+	L.append(int(input()))
+print("elements are ",L)
+
+or
+L=[]
+print("enter element ")
+L=eval(input())
+print("elements are ",L)
+or
+L=[0,0,0,0,0]
+
+for i in range(0,len(L),1):
+	print("enter data ",i+1)
+	L[i]=int(input())
+print("elements are ",L)
+
+
+
+List comphersenion:
+
+L=[expression  for element in sequence  condtion]
+
+
+without using list comphersenion
+L=[5,8,12,3,9]
+L1=[]
+for i in L:
+  L1.append(i)
+print(L1)
+
+
+List comphersenion:
+L=[5,8,12,3,9]
+L1=[i for i in L]
+print(L1)
+
+o/p:
+[5,8,12,3,9]
+
+
+without using list comphersenion
+
+L=[5,8,12,3,9]
+L1=[]
+for i in L:
+  L1.append(i**2)
+print(L1)
+o/p:
+[25, 64, 144, 9, 81]
+
+
+using list comphersenion
+____________________________
+L=[5,8,12,3,9]
+L1=[i**2 for i in L]
+print(L1)
+o/p:
+[25, 64, 144, 9, 81]
+
+without using list comphersion
+__________
+L=[5,8,12,3,9]
+L1=[]
+for i in L:
+  if i>7:
+    L1.append(i**2)
+print(L1)
+
+o/p:[64, 144, 81]
+
+using list  comphersion
+________________
+L=[5,8,12,3,9]
+L1=[i**2 for i in L if i>7]
+print(L1)
+
+o/p:[64, 144, 81]
+
+
+
+
+without using  list comphersion
+_________
+s="welcome"
+L=[]
+for i in s:
+  if i in "aeiou":
+    L.append(i)
+print(L)
+o/p:
+['e', 'o', 'e']
+
+using  list comphersion
+_________
+s="welcome"
+L=[i for i in s if i in "aeiou"]
+print(L)
+o/p:
+['e', 'o', 'e']
+
+
+L=[i*3 for i in range(1,11,1) if i%2==0]
+print(L)
+o/p:
+[6, 12, 18, 24, 30]
+
+
+
+
+
+
+
+
+nested list
+___________
+L=[[1,7,3],[4,8,6]]
+print(L)
+print(L[0])
+print(L[1])
+print(L[0][1])
+print(L[1][2])
+
+o/p:
+_________
+[[1, 7, 3], [4, 8, 6]]
+[1, 7, 3]
+[4, 8, 6]
+7
+6
+
+
+display nested list matrix format
+____________________________________
+L=[[1,7,3],[4,8,6]]
+for i in L:
+	print(i)
+
+o/p:
+[1, 7, 3]
+[4, 8, 6]
+
+
+by sequence
+________________________________
+L=[[1,7,3],[4,8,6]]
+for i in L:
+	for j in i:
+		print(j,end="\t")
+	print()
+
+
+o/p:
+1       7       3
+4       8       6
+
+
+
+2nd way    by index
+____________
+
+
+L=[[1,7,3],[4,8,6]]
+for i in range(0,len(L),1):
+	print(L[i])
+o/p:
+[1, 7, 3]
+[4, 8, 6]
+
+another way   by index
+_______________
+
+L=[[1,7,3],[4,8,6]]
+for i in range(0,len(L),1):
+	for j in range(0,len(L[i]),1):
+		print(L[i][j],end="\t")
+	print()
+
+o/p:
+1       7       3
+4       8       6
+
+
+
+
+#take input from keyboard
+print("enter collection of list ")
+L=eval(input())
+print("list data ")
+print(L)
+
+o/p:
+C:\Users\DELL\Desktop\pythonprogram>py 1.py
+enter collection of list
+[[1,2,3],[4,5],[6]]
+list data
+[[1, 2, 3], [4, 5], [6]]
+
+
+L=[]
+print("enter how many list store ")
+r=int(input())
+for i in range(r):
+	print("enter list",i+1," data")
+	L.append(eval(input()))
+print("elements are ")
+print(L)
+C:\Users\DELL\Desktop\pythonprogram>py 1.py
+enter how many list store
+2
+enter list 1  data
+[10,20,30]
+enter list 2  data
+[40,50]
+elements are
+[[10, 20, 30], [40, 50]]
+
+
+
+
+L=[]
+print("enter list r and c ")
+r=int(input())
+c=int(input())
+print("enter ",r*c,"elements")
+for i in range(r):
+	x=[]
+	for j in range(c):
+		x.append(int(input()))
+	L.append(x)
+print("elements are ")
+print(L)
+C:\Users\DELL\Desktop\pythonprogram>py 1.py
+enter list r and c
+3
+4
+enter  12 elements
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+elements are
+[[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]]
+
+
+
+
+
+L=[]
+print("enter how many  list store ")
+r=int(input())
+for i in range(r):
+	x=[]
+	print("list ",i+1," store how many data")
+	c=int(input())
+	for j in range(c):
+		print("enter data ",j+1)
+		x.append(int(input()))
+	L.append(x)
+print("elements are ")
+print(L)
+:\Users\DELL\Desktop\pythonprogram>py 1.py
+enter how many  list store
+3
+list  1  store how many data
+4
+enter data  1
+10
+enter data  2
+20
+enter data  3
+30
+enter data  4
+40
+list  2  store how many data
+2
+enter data  1
+30
+enter data  2
+40
+list  3  store how many data
+1
+enter data  1
+70
+elements are
+[[10, 20, 30, 40], [30, 40], [70]]
+
+
+
+
+
+L=[[0,0,0],[0,0]]
+
+for i in range(len(L)):
+	for j in range(len(L[i])):
+		print("enter list",i+1,"data ",j+1)
+		L[i][j]=int(input())
+print("elements are ")
+print(L)
+C:\Users\DELL\Desktop\pythonprogram>py 1.py
+enter list 1 data  1
+10
+enter list 1 data  2
+20
+enter list 1 data  3
+30
+enter list 2 data  1
+40
+enter list 2 data  2
+50
+elements are
+[[10, 20, 30], [40, 50]]

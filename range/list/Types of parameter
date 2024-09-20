@@ -1,0 +1,300 @@
+Types of parameter
+_______
+
+(1)requried parameter
+(2)default parameter
+(3)keyword parameter
+(4)variable length parameter
+
+
+requried parameter
+______
+
+def show(a,b,c,d):
+	print(a,b,c,d)
+show(10,12.34,"hi",5)
+#show(1,5,7) error
+
+o/p:
+10 12.34 hi 5
+
+
+
+default parameter
+______
+
+def  show(a=0,b=0,c=10,d=0):
+	print(a,b,c,d)
+show(5,"hi")
+show(1,5,7,12.34)
+show()
+
+o/p:
+5 hi 10 0
+1 5 7 12.34
+0 0 0 0
+
+
+
+keyword parameter
+______
+
+def  show(a=0,b=3,c=10,d=0):
+	print(a,b,c,d)
+show(1,5,7,12.34)
+show(d=25,c=12,a=5,b=1)
+show(c=30)
+o/p:
+1 5  7  12.34
+5 1  12  25
+0 3 30 0
+
+
+
+variable length parameter
+_________
+def show(*a):
+	print(a)
+show(10,12.34)
+show("hi",1,5.3)
+
+o/p:
+(10, 12.34)
+('hi', 1, 5.3)
+
+
+
+
+def show(*a,b):
+	print(a)
+show(10,12.34)
+show("hi",1,5.3)
+
+o/p:
+Traceback (most recent call last):
+  File "C:\Users\HP\Desktop\demo.py", line 3, in <module>
+    show(10,12.34)
+TypeError: show() missing 1 required keyword-only argument: 'b'
+
+
+
+def show(b,*a):
+	print(a)
+show(10,12.34,"hi")
+show("bye",1,5.3)
+o/p:
+(12.34, 'hi')
+(1, 5.3)
+
+
+
+local  variable    vs global variable
+_______________
+
+local  variable :
+A variable defined  inside function that is known as local variable .
+That is visible within that function. not access other function.
+
+def show():
+	a=10
+	print("local ",a)
+def disp():
+	#print(a) error
+	print("hi")
+show()
+disp()
+#print(a)
+o/p:
+local 10
+hi
+
+global  variable:
+A variable defined outside function that is known as global.
+that can acees  all function
+
+a=10
+def show():
+	print("global ",a)
+def disp():
+	print(a)
+	print("hi")
+show()
+disp()
+print(a)
+
+o/p:
+global 10
+10
+hi
+10
+
+
+def show():
+	print(a)
+a=10
+show()
+print(a)
+
+
+
+
+
+a=10
+def show():
+	a=30
+	print("local ",a)
+def disp():
+	print(a)
+	print("hi")
+show()
+disp()
+print(a)
+
+o/p:
+local  30
+10
+hi
+10
+
+
+
+a=10
+def show():
+	global a
+	a=30
+	print(a) #global a display 30
+def disp():
+	print(a)  #30
+	print("hi")
+show()
+disp()
+print(a)   #30
+
+
+o/p:
+30
+30
+hi
+30
+
+a=10
+def show():
+	a=30
+	print(a) #local 30
+	print(locals()['a'])#local 30
+	print(globals()['a']) #global 10
+	globals()['a']=40	
+show()
+print(a)
+
+o/p:
+30
+30
+10
+40
+
+
+
+
+amount=10000
+def deposit(amt):
+	global amount
+	amount=amount+amt 
+	print(amt,"deposit")
+def withdraw(amt):
+	global amount 
+	amount=amount-amt 
+	print(amt,"withdraw")
+print("balance=",amount)
+deposit(3000)
+withdraw(6000)
+print("balance=",amount)
+
+
+o/p:
+balance= 10000
+3000 deposit
+6000 withdraw
+balance= 7000
+
+
+
+call by value or call by refernce
+_____________
+call by value (value send)  int,float complex string tuple
+def update(a):
+	print(a)
+	a=20
+a=10
+update(a)
+print(a)
+
+o/p:
+10
+10
+
+call by address(reference send) list set dict
+def update(L):
+	print(L)
+	L.append(40)
+L=[10,20,30]
+update(L)
+print(L)
+[10, 20, 30]
+[10,20,30,40]
+ 
+
+
+ 
+
+function alias
+_______
+def show():
+	print("show function")
+s=show
+d=s
+show()
+s()
+d()
+
+
+
+
+lambda function
+_______
+
+without lambda  find the square
+__________
+def  sq(x):
+	y=x*x
+	return y
+res=sq(5)  #res variable
+print(res)
+
+
+lambda function 
+______
+
+lambda parameter: expression
+
+
+res=lambda x:x*x   #res function
+print(res(5))
+
+
+
+
+without lambda function
+_________
+
+def add(x,y):
+	return x+y 
+res=add(10,20)
+print(res)
+
+
+using lambda
+_______
+
+res=lambda x,y:x+y
+print(res(2,3))
