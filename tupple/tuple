@@ -1,0 +1,171 @@
+tuple
+______
+
+tuple is  a immutable
+it is collection of dismliar type of elements.
+
+insertion order preserved
+
+tuple  comphersnion not allow
+
+we can represent tuple by using ()  
+
+t=10
+print(type(t))
+
+o/p:
+<class int>
+
+
+t=10,20
+print(type(t))
+
+o/p:
+<class tuple>
+
+
+t=(10)
+print(type(t))
+
+o/P:
+<class int>
+
+
+t=(10,)
+print(type(t))
+
+o/p:
+<class tuple>
+
+
+tuple is immutably
+________________________
+t1=(10,20,30)
+t2=(10,20,30)
+print(id(t1),id(t2))
+
+
+o/p:
+2804492125440 2804492125440
+
+
+
+
+L=[10,20,30]
+t=tuple(L)
+t1=tuple("hi")
+print(t,t1)
+
+o/p:
+(10, 20, 30) ('h', 'i')
+
+
+indexing and slicing concept avaliable
+__________________________________________
+t=(5,8,12,3,8)
+print(t[1],t[-4])
+print(t[2:4:1]
+
+
+o/p:
+8 8
+(12, 3)
+
+
+take input from keyboad and display it
+____________________________________
+print("enter tuple data")
+t=eval(input())
+print(t)
+
+enter tuple data
+10,20,12.34
+(10, 20, 12.34)
+
+
+
+operator
+__________
+t=(5,8,12)
+print(12 in t)
+print(7 in t)
+print(7 not in t)
+t1=(5,8,12)
+t2=(5,9,12)
+print(t==t1)
+print(t is t1)
+print(t1>t2)
+print(t1>=t2)
+print(t1<t2)
+print(t1<=t2)
+#print(t+3) error
+print(t1+t2)
+print(t1*3)
+
+True
+False
+True
+True
+True
+False
+False
+True
+True
+(5, 8, 12, 5, 9, 12)
+(5, 8, 12, 5, 8, 12, 5, 8, 12)
+
+
+//dispaly tuple element
+t=(5,8,12,23)
+for i in t:
+    print(i)
+o/p:
+5
+8
+12
+23
+
+t=(5,8,12,23)
+for i in range(len(t)):
+    print(t[i])
+o/p:
+5
+8
+12
+23
+
+
+
+t=(5,8,12,23)
+t[2]=30   # error  immutable
+print(t)
+
+
+
+
+t=(5,8,12,23,8)
+print(t.count(8))
+
+o/p:
+2
+
+
+t=(5,8,12,23,8)
+print(t.index(8))
+print(t.index(8,2))
+o/p:
+1
+4
+
+sort element
+t=(5,8,7,4)
+L=list(t)
+L.sort()
+t=tuple(L)
+print(t)
+
+o/p:
+(4, 5, 7, 8)
+
+tuple comphersion  not avaliable
+__________________________________
